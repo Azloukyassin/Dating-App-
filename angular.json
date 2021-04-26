@@ -65,6 +65,9 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
+            "sslKey": "./sll/server.key",
+            "sslCert": "./ssl/server.crt",
+            "ssl": true,
             "browserTarget": "DatingApp:build"
           },
           "configurations": {
@@ -91,9 +94,13 @@
               "src/assets"
             ],
             "styles": [
+              "./nodes_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "./nodes_modules/bootstrap/dist/js/bootstrap.min.js",
+              "./nodes_modules/jquery/dist/css/jquery.min.css"
+            ]
           }
         },
         "lint": {
