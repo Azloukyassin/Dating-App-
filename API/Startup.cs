@@ -12,7 +12,9 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
 using API.Data;
-
+using API.Interfaces;
+using API.Services;
+using API.Extension;
 
 namespace API
 {
@@ -29,12 +31,10 @@ namespace API
     // This method gets called by the runtime. Use this method to add services to the container.
     public void ConfigureServices(IServiceCollection services)
     {
-      services.AddDbContext<DataContext>(options =>
-      {
-        options.UseSqlite(_Confi.GetConnectionString("DefaultConnection"));
-      });
+      services.AddApplicationService(_Confi); 
       services.AddControllers();
       services.AddCors();
+      //services.AddAuthentication(Jwtb)
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
