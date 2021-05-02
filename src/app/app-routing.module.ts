@@ -6,7 +6,6 @@ import { MemberDetailComponent } from './member-detail/member-detail.component';
 import { MemberListTestsComponent } from './member-list-tests/member-list-tests.component';
 import { MessageComponent } from './message/message.component';
 import { AuthGuard } from './_gurads/auth.guard';
-
 const routes: Routes = [
   {path:'' , component:HomeComponent},
   {

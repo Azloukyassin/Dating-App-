@@ -21,8 +21,8 @@
             </li>
           </ng-container>
           </ul>
-          <div class="dropdown" *ngIf="accountService.currentUsers | async" dropdown>
-            <a class="dropdown-toggle text-light">Welcome user</a>
+          <div class="dropdown" *ngIf="(accountService.currentUsers | async) as user" dropdown>
+            <a class="dropdown-toggle text-light">Welcome {{user.username | titlecase}</a>
             <div class="dropdown-menu mt-3" *dropdownMenu>
               <a class="dropdwon-item">Edit Profil</a>
               <div class="dropdown-driver"></div>
